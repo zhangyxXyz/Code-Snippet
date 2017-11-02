@@ -29,22 +29,22 @@ Insert file, or function in the comments section, as well as some snippet of lan
 
 3. snippet
 
-like this.
-![cpp](./res/img/cppSnippet.png)
+![cpp](.\\res\\img\\cppSnippet.png)
 
 
-## Install (see on [github](http://www,onlyzyx.com/))
-sorry the plugin is't upload on Market.
+## Install (see on [github](https://github.com/zhangyxXyz/Code-Snippet))
+
+dowload or clone the repository from github, choose the file codesnippets.vsix to install.
 
 ## Uninstall
 There are 2 options to uninstall the extention
 1. via VSCode UI
     * open `Extensions` tab in the VS Code sidebar
-    * hit "Uninstall" next to **Insert Code Snippet** item.
+    * hit "Uninstall" next to **Code Snippet** item.
 
 1. via system command line
     * in your terminal run the following command
-        `code --uninstall-extension yunxingzhang.insertcodesnippet`
+        `code --uninstall-extension codesnippets`
 
 ## Configure shortcuts
 1. Insert the file Snippet Code Default shortcut is `ctrl + k, ctrl + h`
@@ -57,14 +57,16 @@ in your `Code/User/keybindings.json` file add the following:
     "key": "ctrl+k ctrl+h", // specify shortcut you like here
     "command": "insertfileheader.perform",
     "when": "editorTextFocus"
+},
+{
+    "key": "ctrl+k ctrl+f", // specify shortcut you like here
+    "command": "insertfuncheader.perform",
+    "when": "editorTextFocus"
 }
 ```
 
-## License
-Extension licensed under [MIT](https://github.com/zhangyxXyz)
-
 ## Author
-[Yunxing Zhang](http://www.onlyzyx.com/ "Developer website")
+[Yunxing Zhang](http://www.onlyzyx.com/)
 
 ## Thanks
 To [Nick Roach](https://www.elegantthemes.com/) for the great icon.

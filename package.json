@@ -76,6 +76,30 @@
         "postinstall": "node ./node_modules/vscode/bin/install",
         "test": "node ./node_modules/vscode/bin/test"
     },
+    "keywords": [
+        "VSCode",
+        "extension",
+        "Snippets",
+        "Cpp",
+        "C"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/zhangyxXyz/Code-Snippet"
+    },
+    "author": {
+        "name": "yunxingzhang",
+        "url": "https://www.onlyzyx.com/"
+    },
+    "icon": "res/img/icon.png",
+    "galleryBanner": {
+        "color": "#fafafa",
+        "theme": "light"
+    },
+    "bugs": {
+        "url": "https://github.com/zhangyxXyz/Code-Snippet/issues"
+    },
+    "preview": true,
     "devDependencies": {
         "typescript": "^2.5.2",
         "vscode": "^1.1.5",
