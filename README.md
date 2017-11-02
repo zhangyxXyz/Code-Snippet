@@ -1,7 +1,7 @@
 # Code Snippet
-Insert file, or function in the comments section, as well as some snippet of language code.
+Insert file, or function in the comments section(Support C/Cpp,lua..etc ), as well as some snippet of language code.(Only support C/Cpp)
 
-在文件头部或函数部分插入注释, 以及快速输入一些语言的代码片段。
+在文件头部或函数部分插入注释, 以及快速输入一些语言的代码片段。特别的会更具代码种类调整注释保证注释在当前语言下合法, 代码片段目前只支持(c/cpp)
 
 ## Example
 
