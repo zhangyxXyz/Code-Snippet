@@ -1,0 +1,87 @@
+{
+    "name": "codesnippets",
+    "displayName": "Code Snippets",
+    "description": "Insert file, or function in the comments section, as well as some snippet of language code.",
+    "version": "0.0.1",
+    "publisher": "yunxingzhang",
+    "engines": {
+        "vscode": "^1.17.0"
+    },
+    "categories": [
+        "Snippets",
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:insertfileheader.perform",
+        "onCommand:insertfuncheader.perform"
+    ],
+    "main": "./out/src/extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "insertfileheader.perform",
+                "title": "Insert Code FileHeader"
+            },
+            {
+                "command": "insertfuncheader.perform",
+                "title": "Insert Code FuncHeader"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "insertfileheader.perform",
+                "key": "ctrl+k ctrl+h",
+                "mac": "cmd+k cmd+h",
+                "when": "editorTextFocus"
+            },
+            {
+                "command": "insertfuncheader.perform",
+                "key": "ctrl+k ctrl+f",
+                "mac": "cmd+k cmd+f",
+                "when": "editorTextFocus"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "c",
+                "path": "./out/src/snippets/c_cpp_snippets.json"
+            },
+            {
+                "language": "cpp",
+                "path": "./out/src/snippets/c_cpp_snippets.json"
+            },
+            {
+                "language": "cpp",
+                "path": "./out/src/snippets/cpp_snippets.json"
+            },
+            {
+                "language": "h",
+                "path": "./out/src/snippets/c_cpp_snippets.json"
+            },
+            {
+                "language": "h",
+                "path": "./out/src/snippets/cpp_snippets.json"
+            },
+            {
+                "language": "hpp",
+                "path": "./out/src/snippets/c_cpp_snippets.json"
+            },
+            {
+                "language": "hpp",
+                "path": "./out/src/snippets/cpp_snippets.json"
+            }
+        ]
+    },
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.5.2",
+        "vscode": "^1.1.5",
+        "mocha": "^3.5.0",
+        "eslint": "^4.6.1",
+        "@types/node": "^7.0.0",
+        "@types/mocha": "^2.2.42"
+    }
+}
