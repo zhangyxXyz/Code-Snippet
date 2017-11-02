@@ -29,7 +29,7 @@ Insert file, or function in the comments section, as well as some snippet of lan
 
 3. snippet
 
-![cpp](.\\res\\img\\cppSnippet.png)
+![cpp](./res/img/cppSnippet.png)
 
 
 ## Install (see on [github](https://github.com/zhangyxXyz/Code-Snippet))
