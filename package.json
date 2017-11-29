@@ -2,7 +2,7 @@
     "name": "codesnippets",
     "displayName": "Code Snippets",
     "description": "Insert file, or function in the comments section, as well as some snippet of language code.",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "publisher": "yunxingzhang",
     "engines": {
         "vscode": "^1.17.0"
@@ -444,6 +444,12 @@
         "markdown.previewStyles": [
             "./res/md_css/checkbox.css"
         ]
+    },
+    "extensionDependencies": [
+        "Microsoft.vscode-markdown"
+    ],
+    "dependencies": {
+        "markdown-it-task-lists": "^2.0.1"
     },
     "scripts": {
         "postinstall": "node ./node_modules/vscode/bin/install",

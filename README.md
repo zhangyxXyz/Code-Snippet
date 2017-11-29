@@ -118,6 +118,9 @@ you can change it at keybindings.
 
 ## Update Log
 
+### 0.03
+1. Fix the bug: checkbox unable
+
 ### 0.0.2
 
 1. Enhanced VSCode markdown function.
