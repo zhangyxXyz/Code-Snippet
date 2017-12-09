@@ -15,6 +15,7 @@ function insertFileHeader() {
     var timeStamp = " * @Date:   " + getTimeStamp();
     var file = " * @File:   " + getActiveFileName();
     var desc = " * @Description:";
+    var changeLog = " * @ChangeLog:"
     var fileExtension = getActiveFileExtension();
 
     switch (fileExtension) {
@@ -31,36 +32,36 @@ function insertFileHeader() {
             after = "********************************************************/"
             break;
     }
-    return concatWithDelimiter("\n", [before, copyRight, author, timeStamp, file, desc, after]);
+    return concatWithDelimiter("\n", [before, copyRight, author, timeStamp, file, desc, changeLog, after]);
 }
 
 // 获取代码函数注释
 function insertFuncHeader() {
     var before = "";
     var after = "";
-    var desc = "    @desc";
-    var author = "    @author: " + vscode.workspace.getConfiguration('codeSnippets.extension').get('author');
-    var param = "    @param:";
-    var timeStamp = "    time:" + getTimeStamp();
-    var returns = "    @return:";
+    var desc = "  * @desc";
+    //var author = "  * @author: " + vscode.workspace.getConfiguration('codeSnippets.extension').get('author');
+    var param = "  * @param|:";
+    //var timeStamp = "  * @date:" + getTimeStamp();
+    var returns = "  * @return:";
     var fileExtension = getActiveFileExtension();
 
     switch (fileExtension) {
         case 'lua':
-            before = "--[[";
-            after = "--]]";
+            before = "--[=================================[";
+            after = "--]=================================]";
             break;
         case 'py':
             before = "\'\'\'";
             after = "\'\'\'";
             break;
         default:
-            before = "/***"
-            after = "***/"
+            before = "/*********************************"
+            after = "*********************************/"
             break;
     }
 
-    return concatWithDelimiter("\n", [before, desc, author, timeStamp, param, returns, after]);
+    return concatWithDelimiter("\n", [before, desc, /*author, timeStamp,*/ param, returns, after]);
 }
 
 // 获取当前时间戳
@@ -114,6 +115,10 @@ function register(context) {
         }),
         vscode.commands.registerCommand('insertfuncheader.perform', function () {
             var snippet = insertFuncHeader();
+            replaceEditorSelection(snippet);
+        }),
+        vscode.commands.registerCommand('inserttimemstampr.perform', function () {
+            var snippet = getTimeStamp();
             replaceEditorSelection(snippet);
         })
     ];

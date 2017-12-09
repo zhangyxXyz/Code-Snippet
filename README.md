@@ -118,6 +118,10 @@ you can change it at keybindings.
 
 ## Update Log
 
+### 0.04
+1. Adjustment function annotation format
+2. Add a commond to insert time stamp
+
 ### 0.03
 1. Fix the bug: checkbox unable
 
