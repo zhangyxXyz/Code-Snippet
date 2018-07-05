@@ -118,6 +118,9 @@ you can change it at keybindings.
 
 ## Update Log
 
+### 0.05
+1. Remove extra dependencies
+
 ### 0.04
 1. Adjustment function annotation format
 2. Add a commond to insert time stamp
