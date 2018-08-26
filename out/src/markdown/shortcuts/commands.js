@@ -19,6 +19,7 @@ var _commands = [
     new Command('toggleBullets', toggleBullets, 'Bullet points', '* Bullet point', true),
     new Command('toggleOrderedList', toggleOrderedList, 'Number list', '1 Numbered list item', true),
     new Command('toggleCheckboxes', toggleCheckboxes, 'Checkboxes', '- [x] Checkbox item', true),
+    new Command('toggleMathFormula', toggleMath, 'MathFormula', '$$ MathFormula Symbol', true),
     new Command('addTable', tables.addTable, 'Table', 'Tabular | values', true),
     new Command('addTableWithHeader', tables.addTableWithHeader, 'Table (with header)', 'Tabular | values', true)
 ]
@@ -125,6 +126,54 @@ function toggleCheckboxes() {
     else {
         editorHelpers.replaceBlockSelection((text) => text.replace(AddCheckboxes, "$1- [ ] $2"))
     }
+}
+
+
+function toggleMath() {
+    let editor = vscode.window.activeTextEditor;
+    if (!editor.selection.isEmpty)
+        return;
+    let cursor = editor.selection.active;
+    if (getContext('$') === '$|$') {
+        return editor.edit(editBuilder => {
+            editBuilder.replace(new vscode.Range(cursor.line, cursor.character - 1, cursor.line, cursor.character + 1), '$$  $$');
+        }).then(() => {
+            let pos = cursor.with({ character: cursor.character + 2 });
+            editor.selection = new vscode.Selection(pos, pos);
+        });
+    }
+    else if (getContext('$$ ', ' $$') === '$$ | $$') {
+        return editor.edit(editBuilder => {
+            editBuilder.delete(new vscode.Range(cursor.line, cursor.character - 3, cursor.line, cursor.character + 3));
+        });
+    }
+    else {
+        return vscode.commands.executeCommand('editor.action.insertSnippet', { snippet: '$$0$' });
+    }
+}
+function getContext(startPattern, endPattern) {
+    if (endPattern == undefined) {
+        endPattern = startPattern;
+    }
+    let editor = vscode.window.activeTextEditor;
+    let selection = editor.selection;
+    let position = selection.active;
+    let startPositionCharacter = position.character - startPattern.length;
+    let endPositionCharacter = position.character + endPattern.length;
+    if (startPositionCharacter < 0) {
+        startPositionCharacter = 0;
+    }
+    let leftText = editor.document.getText(selection.with({ start: position.with({ character: startPositionCharacter }) }));
+    let rightText = editor.document.getText(selection.with({ end: position.with({ character: endPositionCharacter }) }));
+    if (rightText == endPattern) {
+        if (leftText == startPattern) {
+            return `${startPattern}|${endPattern}`;
+        }
+        else {
+            return `${startPattern}text|${endPattern}`;
+        }
+    }
+    return '|';
 }
 
 const MarkdownLinkRegex = /^\[.+\]\(.+\)$/;

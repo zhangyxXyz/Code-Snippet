@@ -49,9 +49,13 @@ you can open vscode `setting` change the `Copyright` and `Author` info replace d
 
 ![cpp](./res/img/cppSnippet.png)
 
-4. markdown extension
+1. markdown extension
 
 ![markdown](./res/img/markdown.gif)
+
+5. laTex of MathJax 
+
+![latex](./res/img/latex.png)
 
 I have try my best let it more useful, more functions wait for you find it.
 
@@ -66,7 +70,7 @@ There are 2 options to uninstall the extention
     * open `Extensions` tab in the VS Code sidebar
     * hit "Uninstall" next to **Code Snippet** item.
 
-1. via system command line
+2. via system command line
     * in your terminal run the following command
         `code --uninstall-extension codesnippets`
 
@@ -103,7 +107,7 @@ in your `Code/User/keybindings.json` file add the following:
 },
 {
     "command": "markdown.extension.showCommandPalette",
-    "key": "ctrl+m ctrl+m",
+    "key": "alt+shift+m",
     "when": "editorTextFocus && editorLangId == 'markdown'"
 },
 {
@@ -117,6 +121,11 @@ in your `Code/User/keybindings.json` file add the following:
 you can change it at keybindings.
 
 ## Update Log
+
+### 0.06
+1. Add Latex of MathJax
+2. Add Systax Decorations
+3. Auto fix ordered list markers
 
 ### 0.05
 1. Remove extra dependencies
