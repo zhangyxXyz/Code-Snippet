@@ -1,5 +1,6 @@
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
+// https://github.github.com/gfm/#tables-extension-
 const vscode = require("vscode");
 const util = require("../util/util.js");
 function activate(context) {
@@ -112,7 +113,7 @@ class MarkdownDocumentFormatter {
                 return (cell + ' '.repeat(cellLength)).slice(0, cellLength);
             });
             return indentation + '| ' + cells.join(' | ') + ' |';
-        }).join(vscode.workspace.getConfiguration('files', doc.uri).get('eol'));
+        }).join(doc.eol === vscode.EndOfLine.LF ? '\n' : '\r\n');
     }
 }
 //# sourceMappingURL=tableFormatter.js.map

@@ -53,7 +53,7 @@ you can open vscode `setting` change the `Copyright` and `Author` info replace d
 
 ![markdown](./res/img/markdown.gif)
 
-5. laTex of MathJax 
+5. laTex of MathJax
 
 ![latex](./res/img/latex.png)
 
@@ -121,6 +121,9 @@ in your `Code/User/keybindings.json` file add the following:
 you can change it at keybindings.
 
 ## Update Log
+
+### 0.07
+1. Fixed table format bug...
 
 ### 0.06
 1. Add Latex of MathJax

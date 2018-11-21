@@ -2,7 +2,7 @@
     "name": "codesnippets",
     "displayName": "Code Snippets",
     "description": "Insert file, or function in the comments section, as well as some snippet of language code.",
-    "version": "0.0.6",
+    "version": "0.0.7",
     "publisher": "yunxingzhang",
     "engines": {
         "vscode": "^1.24.0"
@@ -32,34 +32,34 @@
                     "description": "Author Info in block comment snipets"
                 },
                 "markdown.extension.orderedList.marker": {
-					"type": "string",
-					"default": "ordered",
-					"description": "`one`: always use `1.` as ordered list marker; `ordered`",
-					"enum": [
-						"one",
-						"ordered"
-					]
+                    "type": "string",
+                    "default": "ordered",
+                    "description": "`one`: always use `1.` as ordered list marker; `ordered`",
+                    "enum": [
+                        "one",
+                        "ordered"
+                    ]
                 },
-				"markdown.extension.orderedList.autoRenumber": {
-					"type": "boolean",
-					"default": true,
-					"description": "Auto fix ordered list markers"
+                "markdown.extension.orderedList.autoRenumber": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Auto fix ordered list markers"
                 },
                 "markdown.extension.syntax.decorations": {
-					"type": "boolean",
-					"default": true,
-					"description": "Add syntax decorations"
-				},
-				"markdown.extension.syntax.plainTheme": {
-					"type": "boolean",
-					"default": true,
-					"description": "Only take effect when `extension.syntax.decorations` is enabled"
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Add syntax decorations"
+                },
+                "markdown.extension.syntax.plainTheme": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Only take effect when `extension.syntax.decorations` is enabled"
                 },
                 "markdown.extension.preview.autoShowPreviewToSide": {
-					"type": "boolean",
-					"default": false,
-					"description": "Auto show preview to side"
-				},
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Auto show preview to side"
+                },
                 "markdownShortcuts.icons.bold": {
                     "type": "boolean",
                     "default": true,
@@ -312,11 +312,11 @@
                 "when": "editorTextFocus && !editorReadonly && editorLangId == 'markdown'"
             },
             {
-				"command": "markdown.extension.toggleMathFormula",
+                "command": "markdown.extension.toggleMathFormula",
                 "key": "ctrl+m ctrl+m",
                 "mac": "cmd+m cmd+m",
-				"when": "editorTextFocus && !editorReadonly && editorLangId == markdown"
-			},
+                "when": "editorTextFocus && !editorReadonly && editorLangId == markdown"
+            },
             {
                 "command": "markdown.extension.addTable",
                 "key": "ctrl+m ctrl+t",
@@ -335,67 +335,67 @@
                 "when": "editorTextFocus && !editorReadonly && editorLangId == markdown && !suggestWidgetVisible"
             },
             {
-				"command": "markdown.extension.onShiftEnterKey",
-				"key": "shift+enter",
-				"when": "editorTextFocus && !editorReadonly && editorLangId == markdown && !suggestWidgetVisible"
-			},
+                "command": "markdown.extension.onShiftEnterKey",
+                "key": "shift+enter",
+                "when": "editorTextFocus && !editorReadonly && editorLangId == markdown && !suggestWidgetVisible"
+            },
             {
                 "command": "markdown.extension.onTabKey",
                 "key": "tab",
                 "when": "editorTextFocus && editorLangId == markdown && !suggestWidgetVisible && !editorReadonly && !editorTabMovesFocus && !inSnippetMode"
             },
             {
-				"command": "markdown.extension.onShiftTabKey",
-				"key": "shift+tab",
-				"when": "editorTextFocus && !editorReadonly && editorLangId == markdown && !suggestWidgetVisible && !editorTabMovesFocus && !inSnippetMode && !hasSnippetCompletions"
-			},
+                "command": "markdown.extension.onShiftTabKey",
+                "key": "shift+tab",
+                "when": "editorTextFocus && !editorReadonly && editorLangId == markdown && !suggestWidgetVisible && !editorTabMovesFocus && !inSnippetMode && !hasSnippetCompletions"
+            },
             {
                 "command": "markdown.extension.onBackspaceKey",
                 "key": "backspace",
                 "when": "editorTextFocus && !editorReadonly && !editorHasSelection && editorLangId == markdown && !suggestWidgetVisible"
             },
             {
-				"command": "markdown.extension.onMoveLineUp",
-				"key": "alt+up",
-				"when": "editorTextFocus && !editorReadonly && editorLangId == markdown && !suggestWidgetVisible"
-			},
-			{
-				"command": "markdown.extension.onMoveLineDown",
-				"key": "alt+down",
-				"when": "editorTextFocus && !editorReadonly && editorLangId == markdown && !suggestWidgetVisible"
-			},
-			{
-				"command": "markdown.extension.onCopyLineUp",
-				"key": "shift+alt+up",
-				"when": "editorTextFocus && !editorReadonly && editorLangId == markdown && !suggestWidgetVisible"
-			},
-			{
-				"command": "markdown.extension.onCopyLineDown",
-				"key": "shift+alt+down",
-				"when": "editorTextFocus && !editorReadonly && editorLangId == markdown && !suggestWidgetVisible"
-			},
-			{
-				"command": "markdown.extension.onIndentLines",
-				"key": "ctrl+]",
-				"mac": "cmd+]",
-				"when": "editorTextFocus && editorLangId == markdown && !suggestWidgetVisible"
-			},
-			{
-				"command": "markdown.extension.onOutdentLines",
-				"key": "ctrl+[",
-				"mac": "cmd+[",
-				"when": "editorTextFocus && editorLangId == markdown && !suggestWidgetVisible"
-			},
+                "command": "markdown.extension.onMoveLineUp",
+                "key": "alt+up",
+                "when": "editorTextFocus && !editorReadonly && editorLangId == markdown && !suggestWidgetVisible"
+            },
+            {
+                "command": "markdown.extension.onMoveLineDown",
+                "key": "alt+down",
+                "when": "editorTextFocus && !editorReadonly && editorLangId == markdown && !suggestWidgetVisible"
+            },
+            {
+                "command": "markdown.extension.onCopyLineUp",
+                "key": "shift+alt+up",
+                "when": "editorTextFocus && !editorReadonly && editorLangId == markdown && !suggestWidgetVisible"
+            },
+            {
+                "command": "markdown.extension.onCopyLineDown",
+                "key": "shift+alt+down",
+                "when": "editorTextFocus && !editorReadonly && editorLangId == markdown && !suggestWidgetVisible"
+            },
+            {
+                "command": "markdown.extension.onIndentLines",
+                "key": "ctrl+]",
+                "mac": "cmd+]",
+                "when": "editorTextFocus && editorLangId == markdown && !suggestWidgetVisible"
+            },
+            {
+                "command": "markdown.extension.onOutdentLines",
+                "key": "ctrl+[",
+                "mac": "cmd+[",
+                "when": "editorTextFocus && editorLangId == markdown && !suggestWidgetVisible"
+            },
             {
                 "command": "markdown.extension.checkTaskList",
                 "key": "alt+c",
                 "when": "editorTextFocus && !editorReadonly && editorLangId == markdown"
             },
             {
-				"command": "markdown.extension.togglePreviewToSide",
-				"key": "ctrl+k v",
-				"when": "!terminalFocus"
-			}
+                "command": "markdown.extension.togglePreviewToSide",
+                "key": "ctrl+k v",
+                "when": "!terminalFocus"
+            }
         ],
         "snippets": [
             {
@@ -547,7 +547,7 @@
     "dependencies": {
         "markdown-it-task-lists": "^2.0.1",
         "@neilsustc/markdown-it-katex": "^0.1.0",
-		"image-size": "^0.6.3"
+        "image-size": "^0.6.3"
     },
     "scripts": {
         "postinstall": "node ./node_modules/vscode/bin/install",
