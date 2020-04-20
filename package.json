@@ -2,7 +2,7 @@
     "name": "codesnippets",
     "displayName": "Code Snippets",
     "description": "Insert file, or function in the comments section, as well as some snippet of language code.",
-    "version": "0.0.7",
+    "version": "0.0.8",
     "publisher": "yunxingzhang",
     "engines": {
         "vscode": "^1.24.0"
@@ -408,22 +408,6 @@
             },
             {
                 "language": "cpp",
-                "path": "./out/src/snippets/cpp_snippets.json"
-            },
-            {
-                "language": "h",
-                "path": "./out/src/snippets/c_cpp_snippets.json"
-            },
-            {
-                "language": "h",
-                "path": "./out/src/snippets/cpp_snippets.json"
-            },
-            {
-                "language": "hpp",
-                "path": "./out/src/snippets/c_cpp_snippets.json"
-            },
-            {
-                "language": "hpp",
                 "path": "./out/src/snippets/cpp_snippets.json"
             }
         ],

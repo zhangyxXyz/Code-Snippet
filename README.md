@@ -122,6 +122,9 @@ you can change it at keybindings.
 
 ## Update Log
 
+### 0.08
+1. Fix the bug: Code snippets configure the wrong language.
+
 ### 0.07
 1. Fixed table format bug...
 
