@@ -75,7 +75,6 @@
 		"body": "for(auto ${1:var} : ${2:collection_to_loop})\n{\n\t$3\n}",
 		"description": "Range-based for loop (c++11) statement"
 	},
-	//Follow items convert from sublime C++ Snippets
 	"beginend_": {
 		"prefix": "beginend_",
 		"body": "\nbegin(${1:v}), end(${1:v})\n",

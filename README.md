@@ -122,6 +122,9 @@ you can change it at keybindings.
 
 ## Update Log
 
+### 0.10
+1. Adjust macos Shortcut Keys.
+
 ### 0.08
 1. Fix the bug: Code snippets configure the wrong language.
 

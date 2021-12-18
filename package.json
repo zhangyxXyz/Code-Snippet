@@ -2,7 +2,7 @@
     "name": "codesnippets",
     "displayName": "Code Snippets",
     "description": "Insert file, or function in the comments section, as well as some snippet of language code.",
-    "version": "0.0.8",
+    "version": "0.1.0",
     "publisher": "yunxingzhang",
     "engines": {
         "vscode": "^1.24.0"
@@ -225,19 +225,19 @@
             {
                 "command": "insertfileheader.perform",
                 "key": "ctrl+i ctrl+h",
-                "mac": "ctrl+i ctrl+h",
+                "mac": "cmd+i cmd+h",
                 "when": "editorTextFocus && !editorReadonly && !suggestWidgetVisible"
             },
             {
                 "command": "insertfuncheader.perform",
                 "key": "ctrl+i ctrl+f",
-                "mac": "ctrl+i ctrl+f",
+                "mac": "cmd+i cmd+f",
                 "when": "editorTextFocus && !editorReadonly && !suggestWidgetVisible"
             },
             {
                 "command": "inserttimemstampr.perform",
                 "key": "ctrl+i ctrl+t",
-                "mac": "ctrl+i ctrl+t",
+                "mac": "cmd+i cmd+t",
                 "when": "editorTextFocus && !editorReadonly && !suggestWidgetVisible"
             },
             {
