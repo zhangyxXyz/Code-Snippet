@@ -2,8 +2,8 @@
     "name": "codesnippets",
     "displayName": "Code Snippets",
     "description": "Insert file, or function in the comments section, as well as some snippet of language code.",
-    "version": "0.1.0",
-    "publisher": "yunxingzhang",
+    "version": "0.1.1",
+    "publisher": "seiunzhang",
     "engines": {
         "vscode": "^1.24.0"
     },
@@ -13,7 +13,10 @@
         "Other"
     ],
     "activationEvents": [
-        "*"
+        "onLanguage:markdown",
+        "onLanguage:rmd",
+        "onLanguage:quarto",
+        "workspaceContains:README.md"
     ],
     "main": "./out/src/extension",
     "contributes": {
@@ -549,8 +552,8 @@
         "url": "https://github.com/zhangyxXyz/Code-Snippet"
     },
     "author": {
-        "name": "yunxingzhang",
-        "url": "https://www.onlyzyx.com/"
+        "name": "seiunzhang",
+        "url": "https://onlyzyx.com/"
     },
     "icon": "res/img/icon.png",
     "galleryBanner": {
