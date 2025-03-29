@@ -1,227 +1,53 @@
 {
-    "name": "codesnippets",
-    "displayName": "Code Snippets",
-    "description": "Insert file, or function in the comments section, as well as some snippet of language code.",
-    "version": "0.1.1",
+    "name": "code-snippet",
+    "displayName": "Code-Snippet",
+    "description": "Code snippets and comment helper for VSCode",
+    "version": "0.1.0",
     "publisher": "seiunzhang",
-    "engines": {
-        "vscode": "^1.24.0"
+    "private": false,
+    "license": "MIT",
+    "icon": "res/img/icon.png",
+    "author": {
+        "name": "seiunzhang"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/zhangyxXyz/Code-Snippet.git"
     },
     "categories": [
         "Snippets",
-        "Formatters",
         "Other"
     ],
-    "activationEvents": [
-        "onLanguage:markdown",
-        "onLanguage:rmd",
-        "onLanguage:quarto",
-        "workspaceContains:README.md"
+    "keywords": [
+        "snippets",
+        "code snippets",
+        "comments",
+        "c++",
+        "cpp",
+        "c"
     ],
-    "main": "./out/src/extension",
+    "engines": {
+        "vscode": "^1.60.0"
+    },
+    "activationEvents": [
+        "onCommand:insertfileheader.perform",
+        "onCommand:insertfuncheader.perform",
+        "onCommand:inserttimemstampr.perform"
+    ],
+    "main": "./out/extension.js",
     "contributes": {
-        "configuration": {
-            "type": "object",
-            "title": "Code Snippets",
-            "properties": {
-                "codeSnippets.extension.copyRight": {
-                    "type": "string",
-                    "default": "blog: http://xxx.com",
-                    "description": "CopyRight Info in header snipets"
-                },
-                "codeSnippets.extension.author": {
-                    "type": "string",
-                    "default": "Coder",
-                    "description": "Author Info in block comment snipets"
-                },
-                "markdown.extension.orderedList.marker": {
-                    "type": "string",
-                    "default": "ordered",
-                    "description": "`one`: always use `1.` as ordered list marker; `ordered`",
-                    "enum": [
-                        "one",
-                        "ordered"
-                    ]
-                },
-                "markdown.extension.orderedList.autoRenumber": {
-                    "type": "boolean",
-                    "default": true,
-                    "description": "Auto fix ordered list markers"
-                },
-                "markdown.extension.syntax.decorations": {
-                    "type": "boolean",
-                    "default": true,
-                    "description": "Add syntax decorations"
-                },
-                "markdown.extension.syntax.plainTheme": {
-                    "type": "boolean",
-                    "default": true,
-                    "description": "Only take effect when `extension.syntax.decorations` is enabled"
-                },
-                "markdown.extension.preview.autoShowPreviewToSide": {
-                    "type": "boolean",
-                    "default": false,
-                    "description": "Auto show preview to side"
-                },
-                "markdownShortcuts.icons.bold": {
-                    "type": "boolean",
-                    "default": true,
-                    "description": "Show bold icon in title bar"
-                },
-                "markdownShortcuts.icons.italic": {
-                    "type": "boolean",
-                    "default": true,
-                    "description": "Show italic icon in title bar"
-                },
-                "markdownShortcuts.icons.strikethrough": {
-                    "type": "boolean",
-                    "default": true,
-                    "description": "Show strikethrough icon in title bar"
-                },
-                "markdownShortcuts.icons.orderedlist": {
-                    "type": "boolean",
-                    "default": true,
-                    "description": "Show Ordered List icon in title bar"
-                },
-                "markdownShortcuts.icons.checkboxes": {
-                    "type": "boolean",
-                    "default": true,
-                    "description": "Show checkboxes icon in title bar"
-                },
-                "markdownShortcuts.icons.link": {
-                    "type": "boolean",
-                    "default": true,
-                    "description": "Show link icon in title bar"
-                },
-                "markdownShortcuts.icons.image": {
-                    "type": "boolean",
-                    "default": true,
-                    "description": "Show image icon in title bar"
-                },
-                "markdownShortcuts.icons.codeblock": {
-                    "type": "boolean",
-                    "default": true,
-                    "description": "Show Code Block in title bar"
-                },
-                "markdownShortcuts.icons.addTable": {
-                    "type": "boolean",
-                    "default": true,
-                    "description": "Show addTable icon in title bar"
-                }
-            }
-        },
         "commands": [
             {
                 "command": "insertfileheader.perform",
-                "title": "Insert Code FileHeader"
+                "title": "Insert File Header"
             },
             {
                 "command": "insertfuncheader.perform",
-                "title": "Insert Code FuncHeader"
+                "title": "Insert Function Header"
             },
             {
-                "command": "markdown.extension.toggleBold",
-                "title": "Bold",
-                "icon": {
-                    "dark": "./res/img/md_icon/bold_white.svg",
-                    "light": "./res/img/md_icon/bold_black.svg"
-                },
-                "category": "Markdown Shortcuts"
-            },
-            {
-                "command": "markdown.extension.toggleItalic",
-                "title": "Italic",
-                "icon": {
-                    "dark": "./res/img/md_icon/italic_white.svg",
-                    "light": "./res/img/md_icon/italic_black.svg"
-                },
-                "category": "Markdown Shortcuts"
-            },
-            {
-                "command": "markdown.extension.toggleStrikethrough",
-                "title": "Strikethrough",
-                "icon": {
-                    "dark": "./res/img/md_icon/strikethrough_white.svg",
-                    "light": "./res/img/md_icon/strikethrough_black.svg"
-                },
-                "category": "Markdown Shortcuts"
-            },
-            {
-                "command": "markdown.extension.toggleCodeBlock",
-                "title": "Code Block",
-                "icon": {
-                    "dark": "./res/img/md_icon/code_white.svg",
-                    "light": "./res/img/md_icon/code_black.svg"
-                },
-                "category": "Markdown Shortcuts"
-            },
-            {
-                "command": "markdown.extension.toggleInlineCode",
-                "title": "Inline Code",
-                "category": "Markdown Shortcuts"
-            },
-            {
-                "command": "markdown.extension.toggleLink",
-                "title": "Hyperlink",
-                "icon": {
-                    "dark": "./res/img/md_icon/link_white.svg",
-                    "light": "./res/img/md_icon/link_black.svg"
-                },
-                "category": "Markdown Shortcuts"
-            },
-            {
-                "command": "markdown.extension.toggleImage",
-                "title": "Image",
-                "icon": {
-                    "dark": "./res/img/md_icon/image_white.svg",
-                    "light": "./res/img/md_icon/image_black.svg"
-                },
-                "category": "Markdown Shortcuts"
-            },
-            {
-                "command": "markdown.extension.toggleBullets",
-                "title": "Bullet Points",
-                "icon": {
-                    "dark": "./res/img/md_icon/bullet_white.svg",
-                    "light": "./res/img/md_icon/bullet_black.svg"
-                },
-                "category": "Markdown Shortcuts"
-            },
-            {
-                "command": "markdown.extension.toggleOrderedList",
-                "title": "Ordered List",
-                "icon": {
-                    "dark": "./res/img/md_icon/number_white.svg",
-                    "light": "./res/img/md_icon/number_black.svg"
-                },
-                "category": "Markdown Shortcuts"
-            },
-            {
-                "command": "markdown.extension.toggleCheckboxes",
-                "title": "Checkboxes",
-                "icon": {
-                    "dark": "./res/img/md_icon/check_white.svg",
-                    "light": "./res/img/md_icon/check_black.svg"
-                },
-                "category": "Markdown Shortcuts"
-            },
-            {
-                "command": "markdown.extension.addTable",
-                "title": "Table",
-                "icon": {
-                    "dark": "./res/img/md_icon/grid_white.svg",
-                    "light": "./res/img/md_icon/grid_black.svg"
-                },
-                "category": "Markdown Shortcuts"
-            },
-            {
-                "command": "markdown.extension.addTableWithHeader",
-                "title": "Table With Header",
-                "icon": {
-                    "dark": "./res/img/md_icon/grid_white.svg",
-                    "light": "./res/img/md_icon/grid_black.svg"
-                },
-                "category": "Markdown Shortcuts"
+                "command": "inserttimemstampr.perform",
+                "title": "Insert Timestamp"
             }
         ],
         "keybindings": [
@@ -242,334 +68,57 @@
                 "key": "ctrl+i ctrl+t",
                 "mac": "cmd+i cmd+t",
                 "when": "editorTextFocus && !editorReadonly && !suggestWidgetVisible"
-            },
-            {
-                "command": "markdown.extension.toggleHeadingUp",
-                "key": "ctrl+shift+]",
-                "mac": "cmd+shift+]",
-                "when": "editorTextFocus && !editorReadonly && editorLangId == markdown && !suggestWidgetVisible"
-            },
-            {
-                "command": "markdown.extension.toggleHeadingDown",
-                "key": "ctrl+shift+[",
-                "mac": "cmd+shift+[",
-                "when": "editorTextFocus && !editorReadonly && editorLangId == markdown && !suggestWidgetVisible"
-            },
-            {
-                "command": "markdown.extension.showCommandPalette",
-                "key": "alt+shift+m",
-                "when": "editorTextFocus && !editorReadonly && editorLangId == 'markdown'"
-            },
-            {
-                "command": "markdown.extension.toggleBold",
-                "key": "ctrl+b",
-                "mac": "cmd+b",
-                "when": "editorTextFocus && !editorReadonly && editorLangId == 'markdown'"
-            },
-            {
-                "command": "markdown.extension.toggleItalic",
-                "key": "ctrl+i",
-                "mac": "cmd+i",
-                "when": "editorTextFocus && !editorReadonly && editorLangId == 'markdown'"
-            },
-            {
-                "command": "markdown.extension.toggleLink",
-                "key": "ctrl+l",
-                "mac": "cmd+l",
-                "when": "editorTextFocus && !editorReadonly && editorLangId == 'markdown'"
-            },
-            {
-                "command": "markdown.extension.toggleImage",
-                "key": "ctrl+shift+l",
-                "mac": "cmd+shift+l",
-                "when": "editorTextFocus && !editorReadonly && editorLangId == 'markdown'"
-            },
-            {
-                "command": "markdown.extension.toggleCodeBlock",
-                "key": "ctrl+m ctrl+c",
-                "mac": "cmd+m cmd+c",
-                "when": "editorTextFocus && !editorReadonly && editorLangId == 'markdown'"
-            },
-            {
-                "command": "markdown.extension.toggleInlineCode",
-                "key": "ctrl+m ctrl+i",
-                "mac": "cmd+m cmd+i",
-                "when": "editorTextFocus && !editorReadonly && editorLangId == 'markdown'"
-            },
-            {
-                "command": "markdown.extension.toggleBullets",
-                "key": "ctrl+m ctrl+b",
-                "mac": "cmd+m cmd+b",
-                "when": "editorTextFocus && !editorReadonly && editorLangId == 'markdown'"
-            },
-            {
-                "command": "markdown.extension.toggleOrderedList",
-                "key": "ctrl+m ctrl+1",
-                "mac": "cmd+m cmd+1",
-                "when": "editorTextFocus && !editorReadonly && editorLangId == 'markdown'"
-            },
-            {
-                "command": "markdown.extension.toggleCheckboxes",
-                "key": "ctrl+m ctrl+x",
-                "mac": "cmd+m cmd+x",
-                "when": "editorTextFocus && !editorReadonly && editorLangId == 'markdown'"
-            },
-            {
-                "command": "markdown.extension.toggleMathFormula",
-                "key": "ctrl+m ctrl+m",
-                "mac": "cmd+m cmd+m",
-                "when": "editorTextFocus && !editorReadonly && editorLangId == markdown"
-            },
-            {
-                "command": "markdown.extension.addTable",
-                "key": "ctrl+m ctrl+t",
-                "mac": "cmd+m cmd+t",
-                "when": "editorTextFocus && !editorReadonly && editorLangId == 'markdown'"
-            },
-            {
-                "command": "markdown.extension.onEnterKey",
-                "key": "enter",
-                "when": "editorTextFocus && !editorReadonly && editorLangId == markdown && !suggestWidgetVisible"
-            },
-            {
-                "command": "markdown.extension.onCtrlEnterKey",
-                "key": "ctrl+enter",
-                "mac": "cmd+enter",
-                "when": "editorTextFocus && !editorReadonly && editorLangId == markdown && !suggestWidgetVisible"
-            },
-            {
-                "command": "markdown.extension.onShiftEnterKey",
-                "key": "shift+enter",
-                "when": "editorTextFocus && !editorReadonly && editorLangId == markdown && !suggestWidgetVisible"
-            },
-            {
-                "command": "markdown.extension.onTabKey",
-                "key": "tab",
-                "when": "editorTextFocus && editorLangId == markdown && !suggestWidgetVisible && !editorReadonly && !editorTabMovesFocus && !inSnippetMode"
-            },
-            {
-                "command": "markdown.extension.onShiftTabKey",
-                "key": "shift+tab",
-                "when": "editorTextFocus && !editorReadonly && editorLangId == markdown && !suggestWidgetVisible && !editorTabMovesFocus && !inSnippetMode && !hasSnippetCompletions"
-            },
-            {
-                "command": "markdown.extension.onBackspaceKey",
-                "key": "backspace",
-                "when": "editorTextFocus && !editorReadonly && !editorHasSelection && editorLangId == markdown && !suggestWidgetVisible"
-            },
-            {
-                "command": "markdown.extension.onMoveLineUp",
-                "key": "alt+up",
-                "when": "editorTextFocus && !editorReadonly && editorLangId == markdown && !suggestWidgetVisible"
-            },
-            {
-                "command": "markdown.extension.onMoveLineDown",
-                "key": "alt+down",
-                "when": "editorTextFocus && !editorReadonly && editorLangId == markdown && !suggestWidgetVisible"
-            },
-            {
-                "command": "markdown.extension.onCopyLineUp",
-                "key": "shift+alt+up",
-                "when": "editorTextFocus && !editorReadonly && editorLangId == markdown && !suggestWidgetVisible"
-            },
-            {
-                "command": "markdown.extension.onCopyLineDown",
-                "key": "shift+alt+down",
-                "when": "editorTextFocus && !editorReadonly && editorLangId == markdown && !suggestWidgetVisible"
-            },
-            {
-                "command": "markdown.extension.onIndentLines",
-                "key": "ctrl+]",
-                "mac": "cmd+]",
-                "when": "editorTextFocus && editorLangId == markdown && !suggestWidgetVisible"
-            },
-            {
-                "command": "markdown.extension.onOutdentLines",
-                "key": "ctrl+[",
-                "mac": "cmd+[",
-                "when": "editorTextFocus && editorLangId == markdown && !suggestWidgetVisible"
-            },
-            {
-                "command": "markdown.extension.checkTaskList",
-                "key": "alt+c",
-                "when": "editorTextFocus && !editorReadonly && editorLangId == markdown"
-            },
-            {
-                "command": "markdown.extension.togglePreviewToSide",
-                "key": "ctrl+k v",
-                "when": "!terminalFocus"
             }
         ],
         "snippets": [
             {
+                "language": "cpp",
+                "path": "./src/snippets/cpp_snippets.json"
+            },
+            {
                 "language": "c",
-                "path": "./out/src/snippets/c_cpp_snippets.json"
+                "path": "./src/snippets/c_cpp_snippets.json"
             },
             {
                 "language": "cpp",
-                "path": "./out/src/snippets/c_cpp_snippets.json"
-            },
-            {
-                "language": "cpp",
-                "path": "./out/src/snippets/cpp_snippets.json"
+                "path": "./src/snippets/c_cpp_snippets.json"
             }
         ],
-        "menus": {
-            "editor/context": [
-                {
-                    "command": "markdown.extension.toggleBold",
-                    "when": "editorLangId == 'markdown'",
-                    "group": "2_markdown_1@1"
+        "configuration": {
+            "type": "object",
+            "title": "Code Snippets Configuration",
+            "properties": {
+                "codeSnippets.extension.author": {
+                    "type": "string",
+                    "default": "Your Name",
+                    "description": "Author name for code comments"
                 },
-                {
-                    "command": "markdown.extension.toggleItalic",
-                    "when": "editorLangId == 'markdown'",
-                    "group": "2_markdown_1@2"
-                },
-                {
-                    "command": "markdown.extension.toggleStrikethrough",
-                    "when": "editorLangId == 'markdown'",
-                    "group": "2_markdown_1@3"
-                },
-                {
-                    "command": "markdown.extension.toggleLink",
-                    "when": "editorLangId == 'markdown'",
-                    "group": "2_markdown_1@4"
-                },
-                {
-                    "command": "markdown.extension.toggleImage",
-                    "when": "editorLangId == 'markdown'",
-                    "group": "2_markdown_1@5"
-                },
-                {
-                    "command": "markdown.extension.toggleCodeBlock",
-                    "when": "editorLangId == 'markdown'",
-                    "group": "2_markdown_1@6"
-                },
-                {
-                    "command": "markdown.extension.toggleInlineCode",
-                    "when": "editorLangId == 'markdown'",
-                    "group": "2_markdown_1@7"
-                },
-                {
-                    "command": "markdown.extension.toggleBullets",
-                    "when": "editorLangId == 'markdown'",
-                    "group": "2_markdown_2@1"
-                },
-                {
-                    "command": "markdown.extension.toggleOrderedList",
-                    "when": "editorLangId == 'markdown'",
-                    "group": "2_markdown_2@2"
-                },
-                {
-                    "command": "markdown.extension.toggleCheckboxes",
-                    "when": "editorLangId == 'markdown'",
-                    "group": "2_markdown_2@3"
-                },
-                {
-                    "command": "markdown.extension.addTable",
-                    "when": "editorLangId == 'markdown'",
-                    "group": "2_markdown_3@1"
-                },
-                {
-                    "command": "markdown.extension.addTableWithHeader",
-                    "when": "editorLangId == 'markdown'",
-                    "group": "2_markdown_3@2"
+                "codeSnippets.extension.copyRight": {
+                    "type": "string",
+                    "default": "Your Company",
+                    "description": "Copyright information for code comments"
                 }
-            ],
-            "editor/title": [
-                {
-                    "command": "markdown.extension.toggleBold",
-                    "when": "editorLangId == 'markdown' && config.markdownShortcuts.icons.bold",
-                    "group": "navigation@1"
-                },
-                {
-                    "command": "markdown.extension.toggleItalic",
-                    "when": "editorLangId == 'markdown' && config.markdownShortcuts.icons.italic",
-                    "group": "navigation@2"
-                },
-                {
-                    "command": "markdown.extension.toggleStrikethrough",
-                    "when": "editorLangId == 'markdown' && config.markdownShortcuts.icons.strikethrough",
-                    "group": "navigation@3"
-                },
-                {
-                    "command": "markdown.extension.toggleOrderedList",
-                    "when": "editorLangId == 'markdown' && config.markdownShortcuts.icons.orderedlist",
-                    "group": "navigation@4"
-                },
-                {
-                    "command": "markdown.extension.toggleCheckboxes",
-                    "when": "editorLangId == 'markdown' && config.markdownShortcuts.icons.checkboxes",
-                    "group": "navigation@5"
-                },
-                {
-                    "command": "markdown.extension.toggleLink",
-                    "when": "editorLangId == 'markdown' && config.markdownShortcuts.icons.link",
-                    "group": "navigation@6"
-                },
-                {
-                    "command": "markdown.extension.toggleImage",
-                    "when": "editorLangId == 'markdown' && config.markdownShortcuts.icons.image",
-                    "group": "navigation@7"
-                },
-                {
-                    "command": "markdown.extension.toggleCodeBlock",
-                    "when": "editorLangId == 'markdown' && config.markdownShortcuts.icons.codeblock",
-                    "group": "navigation@8"
-                },
-                {
-                    "command": "markdown.extension.addTable",
-                    "when": "editorLangId == 'markdown' && config.markdownShortcuts.icons.addTable",
-                    "group": "navigation@9"
-                }
-            ]
-        },
-        "markdown.markdownItPlugins": true,
-        "markdown.previewStyles": [
-            "./res/md_css/checkbox.css",
-            "./res/md_css/katex-0.10.0-alpha.min.css"
-        ]
-    },
-    "dependencies": {
-        "markdown-it-task-lists": "^2.0.1",
-        "@neilsustc/markdown-it-katex": "^0.1.0",
-        "image-size": "^0.6.3"
+            }
+        }
     },
     "scripts": {
-        "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "node ./node_modules/vscode/bin/test"
+        "vscode:prepublish": "pnpm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "pretest": "pnpm run compile && pnpm run lint",
+        "lint": "eslint src",
+        "test": "vscode-test",
+        "package": "vsce package --out ./release/codesnippets.vsix"
     },
-    "keywords": [
-        "Snippets",
-        "C/Cpp",
-        "Markdown",
-        "Shortcuts",
-        "Dictionary"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/zhangyxXyz/Code-Snippet"
-    },
-    "author": {
-        "name": "seiunzhang",
-        "url": "https://onlyzyx.com/"
-    },
-    "icon": "res/img/icon.png",
-    "galleryBanner": {
-        "color": "#fafafa",
-        "theme": "light"
-    },
-    "bugs": {
-        "url": "https://github.com/zhangyxXyz/Code-Snippet/issues"
-    },
-    "preview": true,
     "devDependencies": {
-        "typescript": "^2.5.2",
-        "vscode": "^1.1.5",
-        "mocha": "^3.5.0",
-        "eslint": "^4.6.1",
-        "@types/node": "^7.0.0",
-        "@types/mocha": "^2.2.42"
+        "@types/vscode": "^1.60.0",
+        "@types/mocha": "^10.0.10",
+        "@types/node": "20.x",
+        "@typescript-eslint/eslint-plugin": "^8.28.0",
+        "@typescript-eslint/parser": "^8.28.0",
+        "eslint": "^9.23.0",
+        "typescript": "^5.8.2",
+        "@vscode/test-cli": "^0.0.10",
+        "@vscode/test-electron": "^2.4.1"
     }
 }
